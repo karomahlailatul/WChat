@@ -1,16 +1,20 @@
-import { useEffect, Fragment, useState } from "react";
-import useWindowSize from "../WindowsSize";
+import { 
+  // useEffect,
+   Fragment, useState } from "react";
+// import useWindowSize from "../WindowsSize";
 import Image from "next/image";
 
 import IconSearch from "../../public/assets/icons/search.svg";
 
-import socket from "../../app/socket-io.client";
+// import socket from "../../app/socket-io.client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch,
+  //  useSelector
+   } from "react-redux";
 
-import { getUsersProfile } from "../../app/redux/Slice/UsersProfileSlice";
+// import { getUsersProfile } from "../../app/redux/Slice/UsersProfileSlice";
 import { putUsersProfilePutProfile } from "../../app/redux/Slice/UsersProfilePutProfileSlice";
 
 import { Desktop, Mobile } from "../Responsive";
@@ -18,17 +22,17 @@ import { Desktop, Mobile } from "../Responsive";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 
-import PageLoader from "next/dist/client/page-loader";
+// import PageLoader from "next/dist/client/page-loader";
 import PreLoader from "../PreLoader";
 
 const HomeChatPanelSideBar = ({
   u,
   setU,
-  token,
+  // token,
   setToken,
-  refreshToken,
+  // refreshToken,
   setRefreshToken,
-  sessionId,
+  // sessionId,
   setSessionId,
   id,
   setId,
@@ -39,32 +43,32 @@ const HomeChatPanelSideBar = ({
   setSideBarListChat,
   sidebarProfile,
   setSideBarProfile,
-  sidebarChangeEmail,
-  setSidebarChangeEmail,
-  sidebarChangePassword,
-  setSidebarChangePassword,
-  sidebarDeleteAccount,
-  setSidebarChangeDeleteAccount,
+  // sidebarChangeEmail,
+  // setSidebarChangeEmail,
+  // sidebarChangePassword,
+  // setSidebarChangePassword,
+  // sidebarDeleteAccount,
+  // setSidebarChangeDeleteAccount,
   //sidebar panel outtools
   userOnline,
-  setUserOnline,
-  newMessage,
-  setNewMessage,
+  // setUserOnline,
+  // newMessage,
+  // setNewMessage,
   UsersProfile,
   dispatchGetUsersProfile,
   //message panel
-  messagePanel,
+  // messagePanel,
   setMessagePanel,
-  messagePrivate,
+  // messagePrivate,
   setMessagePrivate,
-  messageCreate,
-  setMessageCreate,
-  messageGroup,
-  setMessageGroup,
+  // messageCreate,
+  // setMessageCreate,
+  // messageGroup,
+  // setMessageGroup,
   //messagepanel outtools
-  idMessage,
+  // idMessage,
   setIdMessage,
-  listMessage,
+  // listMessage,
   setListMessage,
 }) => {
   const router = useRouter();
@@ -167,7 +171,7 @@ const HomeChatPanelSideBar = ({
 
   // console.log(user.filter((item) => item !== e.value))
 
-  const [dataUserNewMessage, setDataUserNewMessage] = useState([]);
+  // const [dataUserNewMessage, setDataUserNewMessage] = useState([]);
 
   // useEffect(() => {
   //   // setDataUser(u.filter((e) => e.userID == idMessage)[0]);
@@ -179,7 +183,7 @@ const HomeChatPanelSideBar = ({
 
   // newMessage.forEach(e => console.log(e.sender == "699c6dd8-82fb-44bc-97cd-a07a4e7f47c" ))
 
-  console.log(u);
+  // console.log(u);
   return (
     <Fragment>
       <PreLoader isLoading={isLoading} />

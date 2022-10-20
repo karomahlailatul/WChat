@@ -3,14 +3,16 @@ import useWindowSize from "../WindowsSize";
 import socket from "../../app/socket-io.client";
 import Image from "next/image";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, 
+  // useSelector 
+} from "react-redux";
 
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 // import { getRecruiterProfile } from "../app/redux/Slice/RecruiterProfileSlice";
 
 import { Desktop, Mobile } from "../Responsive";
 
-import { getMessageGetSenderIdReceiverId } from "../../app/redux/Slice/MessageGetSenderIdReceiverId";
+// import { getMessageGetSenderIdReceiverId } from "../../app/redux/Slice/MessageGetSenderIdReceiverId";
 import PreLoaderComponent from "../PreLoaderComponent";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,42 +22,42 @@ const HomeChatPanelMessage = ({
   u,
   setU,
   token,
-  setToken,
+  // setToken,
   refreshToken,
-  setRefreshToken,
+  // setRefreshToken,
   sessionId,
-  setSessionId,
+  // setSessionId,
   id,
-  setId,
+  // setId,
   //sidebar panel
   sidebarPanel,
   setSidebarPanel,
-  sidebarListChat,
-  setSideBarListChat,
-  sidebarProfile,
-  setSideBarProfile,
-  sidebarChangeEmail,
-  setSidebarChangeEmail,
-  sidebarChangePassword,
-  setSidebarChangePassword,
-  sidebarDeleteAccount,
-  setSidebarChangeDeleteAccount,
+  // sidebarListChat,
+  // setSideBarListChat,
+  // sidebarProfile,
+  // setSideBarProfile,
+  // sidebarChangeEmail,
+  // setSidebarChangeEmail,
+  // sidebarChangePassword,
+  // setSidebarChangePassword,
+  // sidebarDeleteAccount,
+  // setSidebarChangeDeleteAccount,
   //sidebar panel outtools
   userOnline,
-  setUserOnline,
-  newMessage,
-  setNewMessage,
-  UsersProfile,
-  dispatchGetUsersProfile,
+  // setUserOnline,
+  // newMessage,
+  // setNewMessage,
+  // UsersProfile,
+  // dispatchGetUsersProfile,
   //message panel
   messagePanel,
   setMessagePanel,
   messagePrivate,
   setMessagePrivate,
   messageCreate,
-  setMessageCreate,
+  // setMessageCreate,
   messageGroup,
-  setMessageGroup,
+  // setMessageGroup,
   //messagepanel outtools
   idMessage,
   setIdMessage,
@@ -69,7 +71,7 @@ const HomeChatPanelMessage = ({
 
   // const { isLoading } = useSelector((state) => state.MessageGetSenderIdReceiverId);
 
-  const [isLoadingMessage, setIsLoadingMessage] = useState(false);
+  const [isLoadingMessage, setIsLoadingMessage] = useState(true);
 
   const messageEndRef = useRef(null);
 
@@ -126,7 +128,7 @@ const HomeChatPanelMessage = ({
 
   useEffect(() => {
     setDataUser(u.filter((e) => e.userID == idMessage)[0]);
-    
+    setIsLoadingMessage(false)
     // setDataUserNewMessage(newMessage.filter((e) => e.sender == idMessage)[0]);
 
     return () => {};

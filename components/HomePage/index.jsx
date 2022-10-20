@@ -1,15 +1,15 @@
 import { useState, useEffect, Fragment } from "react";
 import HomeAuth from "../HomeAuth";
-import Image from "next/image";
+// import Image from "next/image";
 import Cookies from "js-cookie";
-import useWindowSize from "../WindowsSize";
+// import useWindowSize from "../WindowsSize";
 
 import HomeChat from "../HomeChat";
 
 import socket from "../../app/socket-io.client";
-import PreLoader from "../PreLoader";
+// import PreLoader from "../PreLoader";
 
-import { Desktop, Mobile } from "../../components/Responsive";
+// import { Desktop, Mobile } from "../../components/Responsive";
 
 const HomePage = () => {
   const [token, setToken] = useState("");
@@ -17,7 +17,7 @@ const HomePage = () => {
   const [id, setId] = useState("");
   const [sessionId, setSessionId] = useState("");
 
-  const size = useWindowSize();
+  // const size = useWindowSize();
 
   useEffect(() => {
     setToken(Cookies.get("token"));

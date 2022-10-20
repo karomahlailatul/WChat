@@ -11,7 +11,15 @@ import PreLoader from "../PreLoader";
 
 import { toast } from "react-toastify";
 
-const HomeAuth = ({ u, setU, token, setToken, refreshToken, setRefreshToken, sessionId, setSessionId, id, setId }) => {
+const HomeAuth = ({ 
+  // u, setU, token, 
+  setToken, 
+  // refreshToken, 
+  setRefreshToken, 
+  // sessionId, 
+  setSessionId, 
+  // id,
+   setId }) => {
   const dispatch = useDispatch();
 
   const router = useRouter();

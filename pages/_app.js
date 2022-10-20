@@ -33,7 +33,9 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 library.add(fas, fab, far);
 
-const MyApp = ({ Component, id, token, refreshToken, sessionId, ...rest }) => {
+const MyApp = ({ Component, 
+  // id, token, refreshToken, sessionId,
+   ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest);
   // const router = useRouter();
 
