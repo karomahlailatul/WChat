@@ -4,16 +4,14 @@ import socket from "../../app/socket-io.client";
 import Image from "next/image";
 
 import { useDispatch, 
-  // useSelector 
+  
 } from "react-redux";
 
-// import Cookies from "js-cookie";
-// import { getRecruiterProfile } from "../app/redux/Slice/RecruiterProfileSlice";
 
 import { Desktop, Mobile } from "../Responsive";
 
-// import { getMessageGetSenderIdReceiverId } from "../../app/redux/Slice/MessageGetSenderIdReceiverId";
-import PreLoaderComponent from "../PreLoaderComponent";
+
+// import PreLoaderComponent from "../PreLoaderComponent";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -29,7 +27,7 @@ const HomeChatPanelMessage = ({
   // setSessionId,
   id,
   // setId,
-  //sidebar panel
+  
   sidebarPanel,
   setSidebarPanel,
   // sidebarListChat,
@@ -42,14 +40,14 @@ const HomeChatPanelMessage = ({
   // setSidebarChangePassword,
   // sidebarDeleteAccount,
   // setSidebarChangeDeleteAccount,
-  //sidebar panel outtools
+  
   userOnline,
   // setUserOnline,
   // newMessage,
   // setNewMessage,
   // UsersProfile,
   // dispatchGetUsersProfile,
-  //message panel
+  
   messagePanel,
   setMessagePanel,
   messagePrivate,
@@ -58,10 +56,10 @@ const HomeChatPanelMessage = ({
   // setMessageCreate,
   messageGroup,
   // setMessageGroup,
-  //messagepanel outtools
+  
   idMessage,
   setIdMessage,
-  listMessage,
+  // listMessage,
   setListMessage,
 }) => {
   const size = useWindowSize();
@@ -69,9 +67,7 @@ const HomeChatPanelMessage = ({
   const [dataUser, setDataUser] = useState([]);
   const [content, setContent] = useState("");
 
-  // const { isLoading } = useSelector((state) => state.MessageGetSenderIdReceiverId);
-
-  const [isLoadingMessage, setIsLoadingMessage] = useState(true);
+  // const [isLoadingMessage, setIsLoadingMessage] = useState(true);
 
   const messageEndRef = useRef(null);
 
@@ -85,7 +81,7 @@ const HomeChatPanelMessage = ({
       .unwrap()
       .then((item) => {
         if (item.statusCode === 200) {
-          setListMessage(null);
+          setListMessage([]);
           setMessagePanel(false);
           setSidebarPanel(true);
           setU(
@@ -122,15 +118,12 @@ const HomeChatPanelMessage = ({
     );
 
     setContent("");
-
     document.getElementById("form-chat-message").reset();
   };
 
   useEffect(() => {
     setDataUser(u.filter((e) => e.userID == idMessage)[0]);
-    setIsLoadingMessage(false)
-    // setDataUserNewMessage(newMessage.filter((e) => e.sender == idMessage)[0]);
-
+    // setIsLoadingMessage(true)
     return () => {};
   }, [dispatch, socket, u, token, refreshToken, sessionId, id, idMessage, setIdMessage, messagePanel, setMessagePanel, dataUser]);
 
@@ -140,7 +133,7 @@ const HomeChatPanelMessage = ({
 
   useEffect(() => {
     actionMessageEndRef();
-  }, [listMessage]);
+  }, [dataUser,u]);
 
   useEffect(() => {
     if (size.width >= 992 && !sidebarPanel) {
@@ -151,7 +144,6 @@ const HomeChatPanelMessage = ({
     }
   }, [size]);
 
-  // console.log(newMessage)
 
   return (
     <Fragment>
@@ -170,10 +162,8 @@ const HomeChatPanelMessage = ({
                         <div className="col-xl-10 col-lg-10 ps-2 chat-about d-grid align-items-center">
                           <h6 className="my-0 text-truncate text-light fw-bold">{dataUser?.username == null || dataUser?.username == "null" ? dataUser?.email : dataUser?.username}</h6>
 
-                          {/* <h6 className="my-0 text-truncate text-light fw-bold">{dataUser?.username == null ? dataUser?.email : dataUser?.username}</h6> */}
-                          {/* <small>{Last seen: 2 hours ago}</small> */}
-                          {/* <small className="status text-light">{(userOnline.some(value => value == (idMessage))) ? <Fragment>online</Fragment> : <Fragment>offline</Fragment>}</small> */}
-                          <div className="d-flex align-items-center text-light">
+                          
+                             <div className="d-flex align-items-center text-light">
                             {userOnline.some((value) => value == idMessage) ? (
                               <Fragment>
                                 <span className="icon-online" />
@@ -202,10 +192,8 @@ const HomeChatPanelMessage = ({
                             <li>
                               <a
                                 className="dropdown-item"
-                                // onClick={() => {
-                                //   setSideBarListChat(false);
-                                //   setSideBarProfile(true);
-                                // }}
+                            
+                                
                               >
                                 <FontAwesomeIcon icon="fa-solid fa-user-tag" className="me-2" />
                                 View Profile
@@ -223,16 +211,13 @@ const HomeChatPanelMessage = ({
                     </div>
                     <div className="chat-history my-2">
                       <div id="chat-history-panel" className="chat-history-panel h-100 px-3">
-                        <PreLoaderComponent isLoading={isLoadingMessage} />
+                        {/* <PreLoaderComponent isLoading={isLoadingMessage} /> */}
 
                         {dataUser?.messages?.map((item, index) =>
                           item?.sender == id ? (
                             <Fragment key={index}>
-                              {/* <div className="d-flex justify-content-end my-2  ">
-                                  <div className="d-flex justify-content-start card px-3 align-items-center my-auto bg-info  border-0">
-                                    <div className="fs-6 my-2 text-light">{item?.content}</div>
-                                  </div>
-                                </div> */}
+                            
+                            
                               <div className="d-flex justify-content-end my-2  ">
                                 <div className="d-flex justify-content-start card px-3 align-items-center my-auto bg-info  border-0">
                                   <div className="fs-6 my-2 text-light">{item?.content}</div>
@@ -254,9 +239,8 @@ const HomeChatPanelMessage = ({
                     </div>
                     <form id="form-chat-message" onSubmit={(e) => handleSend(e)} className="chat-submit">
                       <div className="col-12 d-flex ">
-                        {/* <div className="col-2 d-grid">
-                            <button className="btn btn-outline-primary "></button>
-                          </div> */}
+                       
+                       
                         <textarea type="text" className="form-control text-area-message text-secondary" placeholder="" rows="1" onChange={(e) => setContent(e.target.value)} />
 
                         <button type="submit" className="btn btn-info fw-bold text-light icon-send px-4">
@@ -287,8 +271,7 @@ const HomeChatPanelMessage = ({
                         </div>
                         <div className="col-9 ps-2 chat-about d-grid align-items-center">
                           <h6 className="my-0 text-truncate text-light fw-bold">{dataUser?.username == null ? dataUser?.email : dataUser?.username}</h6>
-                          {/* <small>{Last seen: 2 hours ago}</small> */}
-                          {/* <small className="status text-light">{(userOnline.some(value => value == (idMessage))) ? <Fragment>online</Fragment> : <Fragment>offline</Fragment>}</small> */}
+                       
                           <div className="d-flex align-items-center text-light">
                             {userOnline.some((value) => value == idMessage) ? (
                               <Fragment>
@@ -311,10 +294,8 @@ const HomeChatPanelMessage = ({
                             <li>
                               <a
                                 className="dropdown-item"
-                                // onClick={() => {
-                                //   setSideBarListChat(false);
-                                //   setSideBarProfile(true);
-                                // }}
+                              
+                                
                               >
                                 <FontAwesomeIcon icon="fa-solid fa-user-tag" className="me-2" />
                                 View Profile
@@ -332,16 +313,13 @@ const HomeChatPanelMessage = ({
                     </div>
                     <div className="chat-history my-2 ">
                       <div id="chat-history-panel" className="chat-history-panel h-100 px-3">
-                        <PreLoaderComponent isLoading={isLoadingMessage} />
+                        {/* <PreLoaderComponent isLoading={isLoadingMessage} /> */}
 
                         {dataUser?.messages?.map((item, index) =>
                           item?.sender == id ? (
                             <Fragment key={index}>
-                              {/* <div className="d-flex justify-content-end my-2  ">
-                                  <div className="d-flex justify-content-start card px-3 align-items-center my-auto bg-info  border-0">
-                                    <div className="fs-6 my-2 text-light">{item?.content}</div>
-                                  </div>
-                                </div> */}
+                          
+                          
                               <div className="d-flex justify-content-end my-2  ">
                                 <div className="d-flex justify-content-start card px-3 align-items-center my-auto bg-info  border-0">
                                   <div className="fs-6 my-2 text-light">{item?.content}</div>
@@ -363,9 +341,8 @@ const HomeChatPanelMessage = ({
                     </div>
                     <form id="form-chat-message" onSubmit={(e) => handleSend(e)} className="chat-submit">
                       <div className="col-12 d-flex ">
-                        {/* <div className="col-2 d-grid">
-                            <button className="btn btn-outline-primary "></button>
-                          </div> */}
+   
+   
                         <textarea type="text" className="form-control text-area-message text-secondary" placeholder="" rows="1" onChange={(e) => setContent(e.target.value)} />
 
                         <button type="submit" className="btn btn-info fw-bold text-light icon-send px-5">

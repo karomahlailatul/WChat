@@ -1,6 +1,8 @@
-import { 
+import {
   // useEffect,
-   Fragment, useState } from "react";
+  Fragment,
+  useState,
+} from "react";
 // import useWindowSize from "../WindowsSize";
 import Image from "next/image";
 
@@ -10,9 +12,10 @@ import IconSearch from "../../public/assets/icons/search.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { useDispatch,
+import {
+  useDispatch,
   //  useSelector
-   } from "react-redux";
+} from "react-redux";
 
 // import { getUsersProfile } from "../../app/redux/Slice/UsersProfileSlice";
 import { putUsersProfilePutProfile } from "../../app/redux/Slice/UsersProfilePutProfileSlice";
@@ -36,7 +39,6 @@ const HomeChatPanelSideBar = ({
   setSessionId,
   id,
   setId,
-  //sidebar panel
   sidebarPanel,
   setSidebarPanel,
   sidebarListChat,
@@ -49,14 +51,13 @@ const HomeChatPanelSideBar = ({
   // setSidebarChangePassword,
   // sidebarDeleteAccount,
   // setSidebarChangeDeleteAccount,
-  //sidebar panel outtools
   userOnline,
   // setUserOnline,
   // newMessage,
   // setNewMessage,
   UsersProfile,
   dispatchGetUsersProfile,
-  //message panel
+
   // messagePanel,
   setMessagePanel,
   // messagePrivate,
@@ -65,21 +66,19 @@ const HomeChatPanelSideBar = ({
   // setMessageCreate,
   // messageGroup,
   // setMessageGroup,
-  //messagepanel outtools
   // idMessage,
   setIdMessage,
   // listMessage,
   setListMessage,
 }) => {
   const router = useRouter();
-  // const size = useWindowSize();
 
   const handleSelectMessageId = async (e) => {
     await setIdMessage(e);
     await setMessagePanel(true);
     await setMessagePrivate(true);
     await setListMessage([]);
-    setU(
+    await setU(
       u.map((item) => {
         if (item.userID == e) {
           // Create a *new* object with changes
@@ -153,8 +152,6 @@ const HomeChatPanelSideBar = ({
       });
   };
 
-  // const [sidebarSetting, setSideBarSetting] = useState(false);
-
   const handleSignOut = async (e) => {
     await e.preventDefault();
     setToken("");
@@ -169,21 +166,6 @@ const HomeChatPanelSideBar = ({
     router.push("/");
   };
 
-  // console.log(user.filter((item) => item !== e.value))
-
-  // const [dataUserNewMessage, setDataUserNewMessage] = useState([]);
-
-  // useEffect(() => {
-  //   // setDataUser(u.filter((e) => e.userID == idMessage)[0]);
-
-  //   setDataUserNewMessage(newMessage.filter((e) => e.sender == idMessage)[0]);
-
-  //   return () => {};
-  // }, [ socket, u, token, refreshToken, sessionId, id, idMessage, setIdMessage, messagePanel, setMessagePanel, dataUserNewMessage]);
-
-  // newMessage.forEach(e => console.log(e.sender == "699c6dd8-82fb-44bc-97cd-a07a4e7f47c" ))
-
-  // console.log(u);
   return (
     <Fragment>
       <PreLoader isLoading={isLoading} />
@@ -264,9 +246,7 @@ const HomeChatPanelSideBar = ({
                             <li
                               className="d-flex align-items-center col-12"
                               onClick={async () => {
-                                // console.log(e.id)
                                 await handleSelectMessageId(e.id);
-                                // dispatchGetMessageGetSenderIdReceiverId(e.id);
                               }}
                             >
                               <div className="col-2 d-flex align-items-center justify-content-center">
@@ -277,18 +257,18 @@ const HomeChatPanelSideBar = ({
                                 <span className="fs-6 fw-bold text-truncate px-0 pb-0 ">{e.email}</span>
                                 <div className="col-12 d-flex align-items-center">
                                   <div className="col-10">
-                                  {userOnline.some((value) => value == e.userID) ? (
-                                    <Fragment>
-                                      <span className="icon-online" />
-                                      <small className="">Online</small>
-                                    </Fragment>
-                                  ) : (
-                                    <Fragment>
-                                      <span className="icon-offline" />
-                                      <small className="">Offline</small>
-                                    </Fragment>
-                                  )}
-</div>
+                                    {userOnline.some((value) => value == e.userID) ? (
+                                      <Fragment>
+                                        <span className="icon-online" />
+                                        <small className="">Online</small>
+                                      </Fragment>
+                                    ) : (
+                                      <Fragment>
+                                        <span className="icon-offline" />
+                                        <small className="">Offline</small>
+                                      </Fragment>
+                                    )}
+                                  </div>
                                   {e.messagesUnread == 0 ? null : (
                                     <Fragment>
                                       <div className="col-2 d-flex  justify-content-end align-items-center">
@@ -389,14 +369,8 @@ const HomeChatPanelSideBar = ({
                             <li
                               className="d-flex align-items-center"
                               onClick={async () => {
-                                // console.log(e.id)
-
-                                // await setSideBarProfile(false);
-                                // await setSideBarListChat(false);
                                 await setSidebarPanel(false);
                                 await handleSelectMessageId(e.id);
-
-                                // dispatchGetMessageGetSenderIdReceiverId(e.id);
                               }}
                             >
                               <div className="col-2 d-flex align-items-center justify-content-center">

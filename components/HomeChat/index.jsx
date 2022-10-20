@@ -58,9 +58,9 @@ const UsersChat = ({ token, setToken, refreshToken, setRefreshToken, sessionId, 
       setU(e);
 
       e.map((x) => {
-        // if (x.userID != id) {
-        //   setNewMessage((value) => [...value, { sender: x.userID, count: 0 }]);
-        // }
+        if (x.userID != id) {
+          setNewMessage((value) => [...value, { sender: x.userID, count: 0 }]);
+        }
         setIsLoading(false);
 
         if (x.connected == "true" && x.userID != id) {
@@ -82,7 +82,7 @@ const UsersChat = ({ token, setToken, refreshToken, setRefreshToken, sessionId, 
         u.map((item) => {
           if (item.userID == sender) {
             // Create a *new* object with changes
-            return { ...item, messages: [...item.messages, { id, content, sender, receiver, created_on }] , messagesUnread: item.messagesUnread+1 };
+            return { ...item, messages: [...item.messages, { id, content, sender, receiver, created_on }] , messagesUnread: item.messagesUnread + 1 };
           } else {
             // No changes
             return item;
