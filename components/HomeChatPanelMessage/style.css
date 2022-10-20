@@ -1,0 +1,93 @@
+.text-area-message {
+  resize: none;
+}
+
+.chat-history-panel {
+  overflow-y: scroll !important;
+}
+
+/* .chat-history { */
+/* max-height: 880px !important;
+    height: 100vh; */
+/* width: 100vw; */
+/* max-height: calc(100vh * 1); */
+/* max-height: calc(30em * (9/16)); */
+
+/* } */
+
+/* style={{"overflow-y" : "auto" }} */
+
+.icon-send:hover,
+.icon-send:focus,
+.text-area-message:hover,
+.text-area-message:focus {
+  box-shadow: none;
+  /* border: none; */
+  outline: none;
+}
+
+.form-chat-message {
+  height: 75px;
+}
+
+.icon-offline {
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2319ac51bf'  viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z'/%3E%3C/svg%3E"); */
+
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #dd4343;
+  margin-right: 6px;
+}
+
+
+
+
+.icon-online {
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2319ac51bf'  viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z'/%3E%3C/svg%3E"); */
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #77be5a;
+  margin-right: 6px;
+}
+
+.icon-unread {
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2319ac51bf'  viewBox='0 0 512 512'%3E%3C!--! Font Awesome Pro 6.2.0 by %40fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons  Inc. --%3E%3Cpath d='M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512z'/%3E%3C/svg%3E"); */
+  /* height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: var(--bs-info);
+  color : white */
+  font-size: 13px;
+  padding-left:0.5em;
+  padding-right:0.5em;
+  
+  /* border-radius: 50%; */
+  /* margin-right: 6px; */
+}
+
+
+.dropdown-item {
+  cursor: pointer !important;
+}
+
+.chat-headercard {
+  height: 15% !important;
+
+}
+
+.chat-history {
+  height: 83% !important;
+}
+
+.chat-submit {
+  height: 5% !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

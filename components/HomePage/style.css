@@ -1,0 +1,30 @@
+
+   .home-page-mobile .container,
+   .home-page-mobile .container-lg,
+   .home-page-mobile .container-md,
+   .home-page-mobile .container-sm,
+   .home-page-mobile .container-xl {
+    max-width: 650px;
+    position: absolute;
+    padding: 24px;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .home-page .container,
+  .home-page .container-lg,
+  .home-page .container-md,
+  .home-page .container-sm,
+  .home-page .container-xl {
+   max-width: 650px;
+   position: absolute;
+   padding: 24px;
+
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+ }

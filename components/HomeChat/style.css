@@ -1,0 +1,17 @@
+.container-chat-panel {
+  border-radius: 8px;
+  /* max-height: 880px;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%); */
+  /* min-width: 880px;
+    max-height: 880px;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); */
+}
