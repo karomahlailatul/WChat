@@ -18,8 +18,6 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async (c
   }
   const value = await store.getState().VerificationEmail.VerificationEmail;
 
-  // console.log(value);
-
   const status = value?.status || null;
   const statusCode = value?.statusCode || null;
   const message = value?.message || null;
@@ -40,14 +38,6 @@ export const getServerSideProps = wrapper.getServerSideProps((store) => async (c
 });
 
 const Verification = ({ status, statusCode, message, verifyType, usersId, tokenVerification, isLoading }) => {
-  
-  // console.log("status : ",status);
-  // console.log("statusCode : ",statusCode);
-  // console.log("message : ",message);
-  // console.log("verifyType : ",verifyType);
-  // console.log("usersId : ",usersId);
-  // console.log("tokenVerification : ",tokenVerification);
-  // console.log("isLoading : ",isLoading);
 
   useEffect(() => {
     document.title = "Verification | WChat";

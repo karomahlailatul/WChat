@@ -13,7 +13,7 @@ input:disabled {
 
 
 .people-list .chat-list li {
-  padding: 10px 15px;
+  padding: 8px 15px;
   list-style: none;
   border-radius: 8px;
   color: var(--bs-secondary);
@@ -44,6 +44,7 @@ input:disabled {
 }
 
 .dropdown-menu {
+  width: 240px !important;
   --bs-dropdown-color: #212529 !important;
   --bs-dropdown-bg: #fff !important;
   --bs-dropdown-link-color: grey !important;
@@ -84,6 +85,7 @@ input:disabled {
 }
 
 .img-preview {
+  /* border: 3px solid white !important; */
   border-radius: 50%;
   object-fit: cover;
 }
@@ -92,4 +94,75 @@ input:disabled {
 .img-round {
   border-radius: 50%;
   object-fit: cover;
+}
+
+
+.side-scroll{
+  overflow-y: auto !important;
+  overflow-x: none !important;
+}
+
+
+.nav-pills .nav-link  {
+  color: var(--bs-secondary) !important
+}
+
+.nav-pills .nav-link.active {
+  color: #fff !important;
+  background-color: var(--bs-info) !important;
+}
+
+.dropdown .dropdown-menu li{
+ 
+    z-index:10;
+
+}
+
+.chat-message-sender{
+  /* display: inline !important; */
+  /* text-align: end !important; */
+  /* width:auto !important; */
+  /* height:fit-content !important; */
+  /* display: inline-block; */
+  /* text-align-last: right; */
+  /* align-content: flex-end !important; */
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  /* border-radius: 5%; */
+  /* padding-left: 10px ;
+  padding-right: 10px ;
+  padding-top: 2px ;
+  padding-bottom: 2px ; */
+}
+
+.out-box-message-sender{
+  /* display: grid; */
+  /* float: right; */
+  /* height: fit-content;
+  text-align: end !important;
+  background-color: red !important; */
+}
+
+
+/* .icon-remove-member {
+  color:red !important
+} */
+
+
+/* .icon-remove-member:hover
+.icon-remove-member:active {
+  color:blue !important
+} */
+
+.icon-remove-member-inside{
+  color:  var(--bs-secondary)!important;
+}
+
+.icon-remove-member-inside:hover{
+  color: var(--bs-danger) !important;
+}
+
+.icon-owner{
+  font-size: 10px;
+  color: var(--bs-warning);
 }

@@ -14,7 +14,6 @@ export const getUsersProfile = createAsyncThunk("UsersProfile/getUsersProfile", 
         },
       })
       .then((res) => {
-        // console.log(res.data)
         return res.data;
       })
       .catch((err) => {
@@ -39,9 +38,6 @@ const UsersProfileSlice = createSlice({
       state.isLoading = false;
       if (action.payload !== undefined) {
         state.UsersProfile = action.payload.data;
-        // const dob = action.payload.data.date_of_birth.split("T");
-        // state.UsersProfile.date_of_birth = dob[0];
-        // state.user_picture = action.payload.data.picture;
       }
     },
     [getUsersProfile.rejected]: (state, action) => {

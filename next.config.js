@@ -7,7 +7,7 @@ const nextConfig = {
     REACT_APP_API_SOCKET_IO: process.env.REACT_APP_API_SOCKET_IO,
   },
   images: {
-    domains: ['drive.google.com'],
+    domains: ['drive.google.com' , 'lh3.googleusercontent.com'],
   },
 
 }

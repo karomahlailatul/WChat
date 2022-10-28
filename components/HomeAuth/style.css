@@ -12,7 +12,7 @@
   }
   
    .btn-group {
-    border: 1px solid rgba(13, 202, 240, 1);
+    /* border: 1px solid rgba(13, 202, 240, 1); */
   }
   
   .home-page .btn-outline-info , .home-page-mobile  .btn-outline-info {
@@ -25,10 +25,17 @@
     font-weight: bold !important;
     padding-top: 10px !important;
   }
+
+  .label-button-chat {
+    height: 40px;
+    text-align: center;
+    font-weight: bold !important;
+    /* padding-top: 10px !important; */
+  }
   
    .btn-group > .btn:hover {
     color: var(--bs-info) !important;
-    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.75);
+    /* box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.75); */
   }
   
    .btn-group > .btn-check:checked + .btn {
@@ -37,7 +44,7 @@
   
    .btn-group > .btn-check:not(:checked) + .btn:hover {
     color: var(--bs-info) !important;
-    box-shadow: 0px 0px 8px 2px rgba(120, 202, 240, 1);
+    /* box-shadow: 0px 0px 8px 2px rgba(120, 202, 240, 1); */
   }
   
   .btn-submit {

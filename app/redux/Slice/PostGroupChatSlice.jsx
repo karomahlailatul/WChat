@@ -3,51 +3,51 @@ import { toast } from "react-toastify";
 import PrivateAxios from "../../axios/PrivateAxios";
 import Cookies from "js-cookie";
 
-export const putUsersProfilePutProfile = createAsyncThunk("UsersProfilePutProfile/putUsersProfilePutProfile", async (formData) => {
+export const postGroupChatPostGroupChat = createAsyncThunk("postGroupChat/postGroupChatPostGroupChat", async (formData) => {
   let api = PrivateAxios();
 
   const token = Cookies.get("token");
   if (token) {
     const response = await api
-      .put(process.env.REACT_APP_API_BACKEND + "users/profile?update", formData, {
+      .post(process.env.REACT_APP_API_BACKEND + "group_chat", formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
           "Access-Control-Allow-Origin": "*",
+          "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => {
-        toast.success(res.data.message, { toastId: "successUpdateUsers" });
+        toast.success(res.data.message, { toastId: "successCreateGroup" });
         return res.data
       })
       .catch((err) => {
-        toast.warning(err.response.data.message, { toastId: "warningUpdateUsers" });
+        toast.warning(err.response.data.message, { toastId: "warningCreateGroup" });
         return err.response.data
       });
     return response;
   }
 });
 
-const UsersProfilePutProfileSlice = createSlice({
-  name: "UsersProfilePutProfile",
+const postGroupChatSlice = createSlice({
+  name: "postGroupChat",
   initialState: {
     isLoading: false,
     isError: null,
-    UsersProfilePutProfile: [],
+    postGroupChat: [],
   },
   extraReducers: {
-    [putUsersProfilePutProfile.pending]: (state) => {
+    [postGroupChatPostGroupChat.pending]: (state) => {
       state.isLoading = true;
     },
-    [putUsersProfilePutProfile.fulfilled]: (state, action) => {
+    [postGroupChatPostGroupChat.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.UsersProfilePutProfile = action.payload;
+      state.postGroupChat = action.payload;
     },
-    [putUsersProfilePutProfile.rejected]: (state, action) => {
+    [postGroupChatPostGroupChat.rejected]: (state, action) => {
       state.isLoading = false;
       state.isError = action.error;
     },
   },
 });
 
-export default UsersProfilePutProfileSlice.reducer;
+export default postGroupChatSlice.reducer;

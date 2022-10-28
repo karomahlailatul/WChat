@@ -5,8 +5,6 @@ import Cookies from "js-cookie";
 export const getMessageGetSenderIdReceiverId = createAsyncThunk("MessageGetSenderIdReceiverId/getMessageGetSenderIdReceiverId", async ({id,receiver}) => {
   let api = PrivateAxios();
   const token = Cookies.get("token");
-  // console.log(id)
-  // console.log(receiver)
   if (token) {
     const response = await api
       .get(process.env.REACT_APP_API_BACKEND + `message?sender=${id}&receiver=${receiver}`, {
@@ -16,7 +14,6 @@ export const getMessageGetSenderIdReceiverId = createAsyncThunk("MessageGetSende
         },
       })
       .then((res) => {
-        // console.log(res.data)
         return res.data;
       })
       .catch((err) => {

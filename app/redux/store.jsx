@@ -10,6 +10,8 @@ import UsersProfilePutProfileReducer from "./Slice/UsersProfilePutProfileSlice";
 import VerificationEmailReducer from "./Slice/VerificationEmailSlice";
 import MessageGetSenderIdReceiverIdReducer from "./Slice/MessageGetSenderIdReceiverId"
 import MessageDeleteAllPrivateMessageReducer from "./Slice/MessageDeleteAllPrivateMessage"
+import postGroupChatReducer from "./Slice/PostGroupChatSlice"
+import putGroupChatReducer from "./Slice/PutGroupChatSlice"
 
 const rootReducer = combineReducers({
 
@@ -23,6 +25,8 @@ const rootReducer = combineReducers({
   MessageGetSenderIdReceiverId : MessageGetSenderIdReceiverIdReducer,
   MessageDeleteAllPrivateMessage : MessageDeleteAllPrivateMessageReducer,
 
+  postGroupChat: postGroupChatReducer,
+  putGroupChat: putGroupChatReducer,
 });
 
 const reducer = (state, action) => {

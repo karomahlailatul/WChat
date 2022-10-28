@@ -12,22 +12,12 @@ export default function middleware(request = NextRequest) {
   let urlRedirect = request.nextUrl.clone();
   const response = NextResponse.next();
 
-  //  if ( url.includes("/verification") && !request.nextUrl.searchParams.get('id') && !request.nextUrl.searchParams.get('token')) {
-  //     // console.log("siap");
-  //     urlRedirect.pathname = '/'
-  //     return NextResponse.redirect(urlRedirect)
-  // }
-
-
   if (cookiesToken && cookiesRefreshToken && cookiesRole && cookiesId && cookiesLockCredential) {
     // if (url.includes("/verification")) {
-    //   // console.log("include verification");
     //   // if (!request.nextUrl.searchParams.get('id') && !request.nextUrl.searchParams.get('token')) {
-    //   //    console.log("url error");
     //   //    urlRedirect.pathname = '/'
     //   //    return NextResponse.rewrite(urlRedirect)
     //   // } else if (request.nextUrl.searchParams.get('id') && request.nextUrl.searchParams.get('token')) {
-    //   //   console.log("siap verif");
     //   //   return response
     //   // }
     // }

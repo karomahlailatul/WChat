@@ -7,10 +7,7 @@ import PrivateAxios from "../../axios/PrivateAxios";
 
 export const deleteMessageDeleteAllPrivateMessage = createAsyncThunk("MessageDeleteAllPrivateMessage/deletedSelectedMessageDeleteAllPrivateMessage", async ({sender,receiver}) => {
   let api = PrivateAxios();
-  // try {
-    // console.log(sender,receiver)
     const token = Cookies.get("token");
-    // const id_saved_recipes = localStorage.getItem("id");
     if (token) {
       const response = await api.delete(process.env.REACT_APP_API_BACKEND + `message/delete-sender-receiver?sender=${sender}&receiver=${receiver}`, {
           headers: {
@@ -19,7 +16,6 @@ export const deleteMessageDeleteAllPrivateMessage = createAsyncThunk("MessageDel
           },
         })
         .then((res) => {
-          // console.log(res)
           toast.success(res.data.message);
           return res.data;
         })
@@ -46,7 +42,7 @@ const MessageDeleteAllPrivateMessageSlice = createSlice({
     [deleteMessageDeleteAllPrivateMessage.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.MessageDeleteAllPrivateMessage = action.payload;
-      // console.log(action.payload)
+   
     },
     [deleteMessageDeleteAllPrivateMessage.rejected]: (state, action) => {
       state.isLoading = false;

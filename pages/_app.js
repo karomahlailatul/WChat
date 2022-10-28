@@ -1,4 +1,4 @@
-// style componet module
+// style component module
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -17,8 +17,6 @@ import "../components/HomeAuth/style.css";
 
 import { useEffect, Fragment } from "react";
 import { ToastContainer } from "react-toastify";
-// import { useRouter } from "next/router";
-
 import { wrapper } from "../app/redux/store";
 import { Provider } from "react-redux";
 
@@ -37,7 +35,6 @@ const MyApp = ({ Component,
   // id, token, refreshToken, sessionId,
    ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest);
-  // const router = useRouter();
 
   useEffect(() => {
     require("bootstrap/dist/js/bootstrap.bundle.min.js");
@@ -60,18 +57,16 @@ const MyApp = ({ Component,
 
 export default MyApp;
 
-MyApp.getInitialProps = async ({ ctx }) => {
-  const token = ctx.req?.cookies?.token || null;
-  const refreshToken = ctx.req?.cookies?.refreshToken || null;
-  const id = ctx.req?.cookies?.id || null;
-  // const lockCredential = ctx.req?.cookies?.lockCredential || null;
-  const sessionId = ctx.req?.cookies?.sessionId || null;
+// MyApp.getInitialProps = async ({ ctx }) => {
+//   const token = ctx.req?.cookies?.token || null;
+//   const refreshToken = ctx.req?.cookies?.refreshToken || null;
+//   const id = ctx.req?.cookies?.id || null;
+//   const sessionId = ctx.req?.cookies?.sessionId || null;
 
-  return {
-    token: token,
-    refreshToken: refreshToken,
-    id: id,
-    // lockCredential: lockCredential,
-    sessionId: sessionId,
-  };
-};
+//   return {
+//     token: token,
+//     refreshToken: refreshToken,
+//     id: id,
+//     sessionId: sessionId,
+//   };
+// };
