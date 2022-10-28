@@ -7,7 +7,7 @@ import { getUsersProfile } from "../../app/redux/Slice/UsersProfileSlice";
 import PreLoader from "../PreLoader";
 
 const UsersChat = ({ token, setToken, refreshToken, setRefreshToken, sessionId, setSessionId, id, setId, 
-  title, 
+  // title, 
   setTittle 
 }) => {
   const [u, setU] = useState([]);
